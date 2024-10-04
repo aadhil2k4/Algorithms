@@ -53,16 +53,10 @@ int tabulate(vector<int>&wt, vector<int>&val, int w,int n){
 }
 
 int main(){
-    int n, w;
-    cout << "Enter the number of items: ";
-    cin >> n;
-    vector<int> wt(n), val(n);
-    cout << "Enter the weight and value of each item:\n";
-    for(int i = 0; i < n; i++){
-        cin >> wt[i] >> val[i];
-    }
-    cout << "Enter the maximum capacity of the knapsack: ";
-    cin >> w;
+    vector<int> wt = {10, 20, 30};   // Weights of items
+    vector<int> val = {60, 100, 120}; // Values of items
+    int w = 50;  // Capacity of the knapsack
+    int n = wt.size();  // Number of items
     vector<vector<int>> dp(n+1, vector<int>(w+1, -1));
     cout << "Maximum value using recursion: " << recursive(wt, val, w, n) << endl;
     cout << "Maximum value using memoization: " << memoize(wt, val, w, n, dp) << endl;
