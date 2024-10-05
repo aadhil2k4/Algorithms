@@ -1,3 +1,4 @@
+//01 knapsack based
 #include<iostream>
 #include<vector>
 
